@@ -1,0 +1,6 @@
+<% @comments.each do |comment| %>
+  <%= comment.id %> 
+  <%= comment.content %>   
+  <%= link_to "approve",edit_super_admin_path(comment),method: :put%>               
+  <br>
+<% end %>

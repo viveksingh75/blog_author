@@ -1,0 +1,12 @@
+<h1>user block and unblock</h1>
+
+<%= form_with(model: @author, url: admin_path) do |form| %>
+
+  <%= form.label :blocked %>
+  <%= form.check_box :blocked %>
+
+  <%= form.submit "Submit" %>
+
+<% end %>
+
+<%= link_to "Back", blogs_path %>

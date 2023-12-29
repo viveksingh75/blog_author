@@ -1,0 +1,10 @@
+<%= link_to"logout",logout_path%>
+<% @blogs.each do |author| %>
+      <%= author.id %> 
+      <%= author.title %>    
+      <%= author.content %>    
+      <%=link_to "comments",new_comment_path%>   
+     <%end%>
+     <%@comments.each do |comment|%>
+     <%=comment.content%>
+     <%end%>

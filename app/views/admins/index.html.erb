@@ -1,0 +1,38 @@
+
+
+<div class="main">
+  <div class="first">
+    <h1>All Users</h1>
+    <% @author_user.each do |author| %>
+      <%= author.id %> 
+      <%= author.name %>    
+      <%= author.contect %>       
+      <%= author.email %>
+      <%= author.role %>   
+      <%= link_to "Block/Unblock", edit_admin_path(author), method: :put %>
+      <%# <%= link_to "Unblock", unblock_admin_path(author), method: :put %> 
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<h1>My account</h1>
+<% @author_admin.each do |author| %>
+  <%= author.id %> 
+  <%= author.name %>    
+  <%= author.contect %>       
+  <%= author.email %>
+  <%= author.role %>         
+  <br>
+<% end %>
+</div>
+</div>
+
+
+<h1>pending for aprove comment</h1>
+<% @comments.each do |comment| %>
+  <%= comment.id %> 
+  <%= comment.content %>   
+  <%= link_to "approve",edit_comment_path(comment),method: :put%>               
+  <br>
+<% end %>

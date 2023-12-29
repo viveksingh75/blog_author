@@ -1,0 +1,30 @@
+<h1>Signup</h1>
+
+<%= form_with(model: @author, url: signup_path) do |form| %>
+
+<%= form.label :name%>
+<%= form.text_field  :name%>
+
+<%= form.label :email%>
+<%= form.email_field  :email%>
+
+<%= form.label :mobile%>
+<%= form.text_field  :contect%>
+
+  <%= form.label :roles %>
+  <%= form.radio_button :role, 'admin' %><%= form.label :admin %>
+  <%= form.radio_button :role, 'super_admin' %><%= form.label :super_admin %>
+  <%= form.radio_button :role, 'user' %><%= form.label :user %>
+
+<%= form.label :password%>
+<%= form.password_field  :password%>
+
+<%= form.label :password_confirmation%>
+<%= form.password_field  :password_confirmation%> 
+
+<%= form.submit "Submit"%>
+
+
+<% end %>
+ <%=link_to "login",login_path %>
+ 

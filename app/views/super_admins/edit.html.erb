@@ -1,0 +1,12 @@
+<h1>Create Blogs</h1>
+
+<%= form_with(model: @comment, url: super_admin_path) do |form| %>
+
+  <%= form.label :approve %>
+  <%= form.check_box :super_admin %>
+
+  <%= form.submit "Submit" %>
+
+<% end %>
+
+<%= link_to "Back", admins_path %>
