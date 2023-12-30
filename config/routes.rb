@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :blogs
+  resources :blogs,only: [:index,:new,:create]
   resources :admins,only: [:index, :update, :edit]
   resources :super_admins,only: [:edit ,:update,:index]
   resources :comments
