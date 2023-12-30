@@ -1,17 +1,28 @@
-<h1>Create Blogs</h1>
+<style>
+  .hidden-field {
+    display: none;
+  }
+</style>
+
+<h1>Create Blog</h1>
 
 <%= form_with(model: @blog, url: blogs_path) do |form| %>
+  <div class="hidden-field">
+    <%= form.label :author_id, "Author" %>
+    <%= form.collection_select :author_id, Author.all, :id, :name %>
+  </div>
 
-  <%= form.label :title %>
-  <%= form.text_field :title %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
 
-  <%= form.label :content %>
-  <%= form.text_area :content %>
-
-   <%= form.hidden_field :author_id, value: current_user.id %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
 
   <%= form.submit "Submit" %>
-
 <% end %>
 
 <%= link_to "Back", blogs_path %>

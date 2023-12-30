@@ -1,6 +1,4 @@
 class RegitrationsController < ApplicationController
-
- 
     def new
       @author = Author.new
     end
@@ -10,7 +8,7 @@ class RegitrationsController < ApplicationController
       if @author.save
         send_welcome_sms(@author.contect,@author.name) if @author.contect.present?
         RegistrationMailer.welcome_email(@author).deliver_now
-        redirect_to blogs_path , notice: 'User was successfully created'
+        redirect_to blogs_path , notice: 'User  successfully created'
       else
         render :new, status: :unprocessable_entity
       end
@@ -20,7 +18,7 @@ class RegitrationsController < ApplicationController
       client = Twilio::REST::Client.new
   
       message = client.messages.create(
-        from: 'MG127f3de8695b6a977b2f4b0e02d43757',
+        from: 'MG5c2d242ebbbb94bcad6daec92e7637ad',
         to: contect,
         body: "Welcome to #{name}! Thank you for signing up."
       )

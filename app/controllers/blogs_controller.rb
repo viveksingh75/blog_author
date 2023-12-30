@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
   
    @blog = Blog.new(blog_params)
    if @blog.save
-      redirect_to blogs_path
+      redirect_to blogs_path , notice: 'Blog was successfully created'
    else
     render :new
    end
