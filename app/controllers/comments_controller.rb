@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     def update
         @comment = Comment.find(params[:id])
        if @comment.update(comment_attrebutes_params)
-        redirect_to admins_path
+        redirect_to admins_path, notice:'Comment updated successfully'
        else
         render :edit
        end

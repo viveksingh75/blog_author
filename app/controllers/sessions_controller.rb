@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         @author = Author.find_by_email(params[:email])
         if @author && @author.authenticate(params[:password])
           session[:author_id] = @author.id
-          redirect_to blogs_path
+          redirect_to blogs_path,notice: 'user login successful'
           else
       render :new
       end
